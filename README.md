@@ -1,46 +1,34 @@
-# Getting Started with Create React App
+# JBook
+## _A CLI tool for quick and easy markdown note taking and code execution inside your browser!_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-## Available Scripts
+JBook is a React based CLI tool which will open in your browser where you can take quick notes, execute code and see it in preview as well...
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Just one CLI command and the app opens in your browser
+- A powerful note taking interface with complete Markdown syntax support
+- Supports JavaScript, TypeScript as well as JSX and TSX code
+- See your code get compiled and executed in a preview window as well!
+- Your notes and code get automatically saved to your system once you exit the application
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Tech
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+JBook uses a number of open source projects to work properly:
 
-### `npm run build`
+- [ReactJS](https://github.com/topics/react) - HTML enhanced for web apps!
+- [markdown-it] - Markdown parser done right. Fast and easy to extend.
+- [node.js] - evented I/O for the backend
+- [Express] - fast node.js network app framework [@tjholowaychuk]
+- [Breakdance](https://breakdance.github.io/breakdance/) - HTML
+to Markdown converter
+- [esBuild](https://github.com/evanw/esbuild) - An awesome package bundler and code transpiler!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+And of course JBook itself is open source with a [public repository](https://github.com/shrivastavasamarth22/jbook)
+ on GitHub.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## <> with ❤ by Samarth Shrivastava
