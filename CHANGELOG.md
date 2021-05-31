@@ -1,3 +1,7 @@
+- Update CHANGELOG.md
+- Added basic error checking and displaying of user code
+- Auto generation of CHANGELOG.md file activated
+- Generated CHANGELOG.md file
 - Passed user code directly along the iframe and then executed it
 - Added iframe to remotely execute user code
 - Extracted common caching logic into a separate onLoad function inside the custom esbuild plugin
