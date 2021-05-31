@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import * as esbuild from 'esbuild-wasm'
 import {unpkgPathPlugin} from "./plugins/unpkg-path-plugin";
 import {fetchPlugin} from "./plugins/fetch-plugin";
+import CodeEditor from "./components/code-editor";
 
 const App = (): JSX.Element => {
     const [input, setInput] = useState('');
-    const [code, setCode] = useState('');
 
     const ref = useRef<any>()
     const iframe = useRef<any>()
@@ -69,6 +69,7 @@ const App = (): JSX.Element => {
 
     return (
         <div>
+            <CodeEditor />
             <textarea
                 value={input}
                 onChange={e => setInput(e.target.value)}
@@ -77,8 +78,8 @@ const App = (): JSX.Element => {
             <div>
                 <button onClick={onClick}>Submit</button>
             </div>
-            <pre>{code}</pre>
             <iframe
+                title={"preview"}
                 ref={iframe}
                 srcDoc={html}
                 sandbox={"allow-scripts"}
