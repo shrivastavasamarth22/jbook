@@ -9,6 +9,7 @@ const App = (): JSX.Element => {
     const [code, setCode] = useState('');
 
     const ref = useRef<any>()
+    const iframe = useRef<any>()
 
     const startService = async () => {
         ref.current = await esbuild.startService({
@@ -42,14 +43,22 @@ const App = (): JSX.Element => {
             }
         )
 
-        setCode(result.outputFiles[0].text);
-
+        iframe.current.contentWindow.postMessage(result.outputFiles[0].text, '*')
     }
 
     const html = `
-        <script>
-            ${code}
-        </script>
+        <html>
+            <head></head>
+            <body>
+                <div id="root">
+                    <script>
+                        window.addEventListener('message', (event) => {
+                            eval(event.data)
+                        }, false)
+                    </script>   
+                </div>
+            </body>
+        </html>
     `
 
     return (
@@ -64,6 +73,7 @@ const App = (): JSX.Element => {
             </div>
             <pre>{code}</pre>
             <iframe
+                ref={iframe}
                 srcDoc={html}
                 sandbox={"allow-scripts"}
             />
