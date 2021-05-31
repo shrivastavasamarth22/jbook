@@ -42,7 +42,6 @@ const App = (): JSX.Element => {
                 }
             }
         )
-
         iframe.current.contentWindow.postMessage(result.outputFiles[0].text, '*')
     }
 
@@ -53,7 +52,12 @@ const App = (): JSX.Element => {
                 <div id="root">
                     <script>
                         window.addEventListener('message', (event) => {
-                            eval(event.data)
+                            try {
+                                eval(event.data)
+                            } catch (e) {
+                                const root = document.querySelector("#root");
+                                root.innerHTML = '<div style="color: red;"><h4>Runtime Error</h4>>' + e + '</div>'
+                            }
                         }, false)
                     </script>   
                 </div>
