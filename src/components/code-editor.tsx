@@ -40,7 +40,7 @@ const CodeEditor: FC<CodeEditorProps> = ({initialValue, onChange}) => {
 
     return (
         <div>
-            <button onClick={onFormatClick}>Format</button>
+            <button className={"button button-format is-primary is-small"} onClick={onFormatClick}>Format</button>
             <MonacoEditor
                 height={"500px"}
                 theme={"vs-dark"}
