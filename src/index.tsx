@@ -13,9 +13,13 @@ const App = (): JSX.Element => {
     const startService = async () => {
         ref.current = await esbuild.startService({
             worker: true,
-            wasmURL: '/esbuild.wasm'
+            wasmURL: 'https://unpkg.com/esbuild-wasm@0.8.27/esbuild.wasm'
         });
     }
+
+    useEffect(() => {
+        startService();
+    }, [])
 
     const onClick = async () => {
         if (!ref.current) {
@@ -39,11 +43,14 @@ const App = (): JSX.Element => {
         )
 
         setCode(result.outputFiles[0].text);
+
     }
 
-    useEffect(() => {
-        startService();
-    }, [])
+    const html = `
+        <script>
+            ${code}
+        </script>
+    `
 
     return (
         <div>
@@ -56,6 +63,10 @@ const App = (): JSX.Element => {
                 <button onClick={onClick}>Submit</button>
             </div>
             <pre>{code}</pre>
+            <iframe
+                srcDoc={html}
+                sandbox={"allow-scripts"}
+            />
         </div>
     )
 }
