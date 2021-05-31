@@ -1,9 +1,3 @@
-#### 0.1.0 (2021-05-31)
-
-##### Other Changes
-
-* //github.com/shrivastavasamarth22/jbook into main (1b2536ec)
-
 - Passed user code directly along the iframe and then executed it
 - Added iframe to remotely execute user code
 - Extracted common caching logic into a separate onLoad function inside the custom esbuild plugin
