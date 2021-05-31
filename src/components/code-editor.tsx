@@ -1,11 +1,21 @@
 import React, {FC} from 'react';
-import MonacoEditor from '@monaco-editor/react';
+import MonacoEditor, { EditorDidMount } from '@monaco-editor/react';
 
 interface CodeEditorProps {
     initalValue: string;
+    onChange(input: string): void
 }
 
-const CodeEditor: FC<CodeEditorProps> = ({ initalValue }) => {
+const CodeEditor: FC<CodeEditorProps> = ({ initalValue, onChange }) => {
+
+    const onEditorDidMount: EditorDidMount = (getValue, monacoEditor) => {
+        monacoEditor.onDidChangeModelContent(() => {
+            onChange(getValue());
+        });
+
+        monacoEditor.getModel()?.updateOptions({ tabSize: 2 })
+    }
+
     return (
         <MonacoEditor
             height={"500px"}
@@ -25,6 +35,7 @@ const CodeEditor: FC<CodeEditorProps> = ({ initalValue }) => {
                 automaticLayout: true
             }}
             value={initalValue}
+            editorDidMount={onEditorDidMount}
         />
     )
 }

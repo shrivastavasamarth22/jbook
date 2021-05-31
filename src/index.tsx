@@ -71,6 +71,9 @@ const App = (): JSX.Element => {
         <div>
             <CodeEditor
                 initalValue={"const a = 1;"}
+                onChange={(value) => {
+                    setInput(value)
+                }}
             />
             <textarea
                 value={input}
