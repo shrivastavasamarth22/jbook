@@ -1,7 +1,6 @@
 import 'bulmaswatch/cyborg/bulmaswatch.min.css';
 import {useState} from 'react';
 import ReactDOM from 'react-dom';
-
 import bundle from './bundler'
 import CodeEditor from "./components/code-editor";
 import Preview from "./components/Preview";
@@ -18,7 +17,7 @@ const App = (): JSX.Element => {
     return (
         <div>
             <CodeEditor
-                initialValue={"const a = 1;"}
+                initialValue={""}
                 onChange={(value) => {
                     setInput(value)
                 }}
