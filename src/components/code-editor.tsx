@@ -62,7 +62,7 @@ const CodeEditor: FC<CodeEditorProps> = ({initialValue, onChange}) => {
             <MonacoEditor
                 height={"500px"}
                 theme={"vs-dark"}
-                language={"typescript"}
+                language={"javascript"}
                 options={{
                     minimap: {
                         enabled: false
