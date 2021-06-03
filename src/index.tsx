@@ -1,14 +1,13 @@
 import 'bulmaswatch/cyborg/bulmaswatch.min.css';
 import ReactDOM from 'react-dom';
-import CodeCell from "./components/code-cell";
+import CodeCell from './components/code-cell';
 
-const App = (): JSX.Element => {
-    return (
-        <div>
-            <CodeCell />
-            <CodeCell />
-        </div>
-    )
-}
+const App = () => {
+  return (
+    <div>
+      <CodeCell />
+    </div>
+  );
+};
 
-ReactDOM.render(<App/>, document.querySelector('#root'))
+ReactDOM.render(<App />, document.querySelector('#root'));

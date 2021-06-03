@@ -1,31 +1,33 @@
-import {useState} from 'react';
-import bundle from '../bundler'
-import CodeEditor from "./code-editor";
-import Preview from "./Preview";
+import { useState, useEffect } from 'react';
+import CodeEditor from './code-editor';
+import Preview from './preview';
+import bundle from '../bundler';
+import Resizable from './resizable';
 
-const CodeCell = (): JSX.Element => {
-    const [input, setInput] = useState('');
-    const [code, setCode] = useState('')
+const CodeCell = () => {
+  const [code, setCode] = useState('');
+  const [input, setInput] = useState('');
 
-    const onClick = async () => {
-        const output = await bundle(input)
-        setCode(output)
-    }
+  useEffect(() => {
+    setTimeout(async () => {
+      const output = await bundle(input);
+      setCode(output);
+    }, 1000)
+  }, [input])
 
-    return (
-        <div>
-            <CodeEditor
-                initialValue={""}
-                onChange={(value) => {
-                    setInput(value)
-                }}
-            />
-            <div>
-                <button onClick={onClick}>Submit</button>
-                <Preview code={code}/>
-            </div>
-        </div>
-    )
-}
+  return (
+    <Resizable direction="vertical">
+      <div style={{ height: '100%', display: 'flex', flexDirection: 'row' }}>
+        <Resizable direction="horizontal">
+          <CodeEditor
+            initialValue=""
+            onChange={(value) => setInput(value)}
+          />
+        </Resizable>
+        <Preview code={code} />
+      </div>
+    </Resizable>
+  );
+};
 
-export default CodeCell
+export default CodeCell;
