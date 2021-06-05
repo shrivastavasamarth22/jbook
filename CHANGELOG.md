@@ -1,3 +1,9 @@
+#### 0.1.0 (2021-06-04)
+
+##### Other Changes
+
+* //github.com/shrivastavasamarth22/jbook into main (1b2536ec)
+
 - Update CHANGELOG.md
 - Added basic error checking and displaying of user code
 - Auto generation of CHANGELOG.md file activated

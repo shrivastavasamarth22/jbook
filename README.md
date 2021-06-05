@@ -20,11 +20,9 @@ JBook is a React based CLI tool which will open in your browser where you can ta
 JBook uses a number of open source projects to work properly:
 
 - [ReactJS](https://github.com/topics/react) - HTML enhanced for web apps!
-- [markdown-it]() - Markdown parser done right. Fast and easy to extend.
-- [node.js]() - evented I/O for the backend
-- [Express]() - fast node.js network app framework [@tjholowaychuk]
-- [Breakdance](https://breakdance.github.io/breakdance/) - HTML
-  to Markdown converter
+- [node.js](https://nodejs.org/en/) - evented I/O for the backend
+- [monaco-editor](https://www.npmjs.com/package/monaco-editor) - An awesome web code editor for ReactJS built by Microsoft 
+- [@uiw/react-md-editor](https://www.npmjs.com/package/@uiw/react-md-editor) - Markdown Editor for ReactJS
 - [esBuild](https://github.com/evanw/esbuild) - An awesome package bundler and code transpiler!
 
 And of course JBook itself is open source with a [public repository](https://github.com/shrivastavasamarth22/jbook)
