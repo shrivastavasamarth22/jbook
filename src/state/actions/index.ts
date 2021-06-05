@@ -1,4 +1,5 @@
 import {ActionType} from "../action-types";
+import {CellTypes} from "../cell";
 
 interface MoveCellAction {
     type: ActionType.MOVE_CELL;
@@ -12,7 +13,7 @@ interface DeleteCellAction {
     type: ActionType.DELETE_CELL;
     payload: {
         id: string;
-        type: 'code' | 'text'
+        type: CellTypes
     }
 }
 
